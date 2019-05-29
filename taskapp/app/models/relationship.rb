@@ -12,7 +12,7 @@ class Relationship < ApplicationRecord
   def self.create_reciprocal_for_ids(user_id, friend_id)
     user_friendship = Relationship.create(user_id: user_id, friend_id: friend_id)
     friend_friendship = Relationship.create(user_id: friend_id, friend_id: user_id)
-    [user_friendship, friend_friendship]
+    byebug
   end
 
   def self.destroy_reciprocal_for_ids(user_id, friend_id)
