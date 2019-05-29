@@ -1,7 +1,13 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @month = nil
+    if params[:month] == nil
+      @month = Date::MONTHNAMES[Time.now.month]
+    else
+      @month = params[:month]
+    end
+    @tasks = Task.all.select {|task| task.month_name == @month}
   end
 
   def show
