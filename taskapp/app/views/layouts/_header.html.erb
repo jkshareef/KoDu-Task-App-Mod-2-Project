@@ -1,29 +1,25 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Task App", users_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", users_path %></li>
-        
+<header class="site-header">
+  <div class="wrapper">
+    <div class="site-header__logo">
+        <%= link_to "Task App", users_path%>
+    </div>
+
+        <nav class="primary-nav--pull-right">
         <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Account <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", '#' %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: :delete %>
-              </li>
-            </ul>
-          </li>
+          <ul class="primary-nav__ul">
+
+            <li class="primary-nav__li"><%= link_to "Log out", logout_path, class: "btn", method: :delete %></li>
+            <li class="primary-nav__li"><%= link_to "Settings", '#', class: "btn" %></li>
+
+            <li class="primary-nav__li"><%= link_to "Friends", friends_path, class: "btn" %></li>
+            <li class="primary-nav__li"><%= link_to "Profile", current_user, class: "btn"%></li>
+          </ul>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+
+          <ul class="primary-nav__ul">
+            <li class="primary-nav__li"><%= link_to "Log in", login_path, class: "primary-nav__a" %></li>
+          </ul>
         <% end %>
-      </ul>
     </nav>
   </div>
 </header>
