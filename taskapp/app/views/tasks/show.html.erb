@@ -1,1 +1,14 @@
 <h2>Task <%= @task.id%></h2>
+<p>Descriptoin: <%= @task.description%></p>
+<p>Date: <%= @task.date%></p>
+<p>Time: <%= @task.duration%></p>
+<%if @task.urgent%>
+  <p style="color: red">Urgent!!</p>
+<%end%>
+<label>Comments: </label>
+<% @task.comments.each do |comment|%>
+  <div class="comment">
+    <p><%=comment.content%> - <%=comment.commenter%></p>
+  </div>
+<%end%>
+<%= link_to "Edit", edit_comment_path%>
