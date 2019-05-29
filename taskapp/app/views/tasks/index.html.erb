@@ -1,0 +1,9 @@
+<%i = 1%>
+<% @tasks.each do |task|%>
+  <h3>Task <%= i%></h3>
+  <p>Description: <%= task.description%></p>
+  <p>Start Date: <%=task.date%></p>
+  <p>Duration: <%=task.duration%></p>
+  <%= link_to "Details", task%>
+  <%i += 1%>
+<%end%>

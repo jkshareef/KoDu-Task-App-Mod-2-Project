@@ -14,6 +14,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.user = current_user
     if @task.save
       redirect_to @task
     else
@@ -27,8 +28,10 @@ class TasksController < ApplicationController
   end
 
   def update
+
     @task = Task.find(params[:id])
     if @task.update(task_params)
+      @task.user = current_user
       redirect_to @task
     else
       render :edit
