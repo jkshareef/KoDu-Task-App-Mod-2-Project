@@ -9,16 +9,17 @@
 months = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
 
 single_days = ["01", "02", "03", "04", "05", "06", "07", "08", "09"]
-multi_days = (10..28).to_a
+#multi_days = (10..28).to_a
 
-single_days << multi_days
+#single_days << multi_days
+#single_days = single_days.flatten
 
-am_pm = ["AM", "PM"]
+am_pm = ["am", "pm"]
 
 true_false = [true, false]
 
 
-100.times do
+2.times do
   User.create(display_name: Faker::Name.name, user_name: Faker::Twitter.screen_name, password: 'passw0rd')
 end
 
@@ -29,8 +30,8 @@ end
 # end
 
 User.all.each do |user|
-  rand(10..40).times do
-    task = Task.new(description: Faker::Hipster.sentence, date: "2019-#{months.sample}-#{single_days.sample}", start_time: "#{rand(1-12)}#{am_pm.sample}", end_time: "#{rand(1-12)}#{am_pm.sample}", user_id: user.id, urgent: true_false.sample)
+  rand(1..5).times do
+    task = Task.new(description: Faker::Hipster.sentence, date: "2019-09-#{single_days.sample}", start_time: "#{rand(1-12)}#{am_pm.sample}", end_time: "#{rand(1-12)}#{am_pm.sample}", user_id: user.id, urgent: true_false.sample)
     task.save
     # byebug
   end
