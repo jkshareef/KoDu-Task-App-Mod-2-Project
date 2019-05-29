@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+ .wrapper {
+   overflow: hidden;
+   padding-left: 18px;
+   padding-right: 18px;
+   max-width: 1236px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .wrapper__body {
+   padding-top: 40px;
+ }

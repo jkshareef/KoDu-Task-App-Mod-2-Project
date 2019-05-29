@@ -1,11 +1,15 @@
-<%= render 'layouts/header' %>
-<% if current_user = @user %>
-  <%= @user.display_name %>
-<% else %>
-<%= @user.display_name %><br>
+<%= render "/layouts/header" %>
+<div class="wrapper__body">
 
-<%= form_tag("/request", method: "get") do %>
-  <%= hidden_field_tag(:id, @user.id) %>
-  <%= submit_tag("Add Friend") %>
-  <% end %>
+<% if current_user == @user %>
+  <%= @user.display_name %><br>
+<% else %>
+
+  <%= @user.display_name %><br>
+
+  <br><%= form_tag("/requests", method: "post") do %>
+    <%= hidden_field_tag(:id, @user.id) %>
+    <%= submit_tag("Add Friend") %>
+    <% end %>
 <% end %>
+</div>
