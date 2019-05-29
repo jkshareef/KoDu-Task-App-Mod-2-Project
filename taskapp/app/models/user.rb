@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :comments, through: :tasks
   has_many :tasks
 
+  include Gravtastic
+  gravtastic
+
 
   validates :user_name, uniqueness: true
   validates :display_name, uniqueness: true
@@ -12,5 +15,23 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  def top_tasks
+    # d = Time.new
+    # array = []
+    # final_list = []
+    # byebug
+    # array << tasks.min_by {|t| (t.date.split('-')[1].to_i - d.strftime("%F").split('-')[1].to_i).abs}
+    #
+    #
+    # final_list << array.min_by  {|t| (t.date.split('-')[2].to_i - d.strftime("%F").split('-')[2].to_i).abs}
+
+    
+    tasks.where(urgent: true)
+
+
+
+
+    # final_list
+  end
 
 end

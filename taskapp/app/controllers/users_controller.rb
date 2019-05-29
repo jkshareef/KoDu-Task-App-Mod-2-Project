@@ -23,7 +23,9 @@ class UsersController < ApplicationController
   end
 
   def friends
+    Relationship.create_reciprocal_for_ids(:user_id, :friend_id)
   end
+  
 
 
 

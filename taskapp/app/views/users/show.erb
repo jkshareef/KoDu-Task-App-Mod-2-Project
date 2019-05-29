@@ -1,11 +1,30 @@
 <%= render "/layouts/header" %>
 <div class="wrapper__body">
 
+
 <% if current_user == @user %>
   <%= @user.display_name %><br>
+  <h2>Top Tasks</h2>
+  <% @user.top_tasks.each do |t| %>
+    <div class="wrapper__body--item">
+      <%= t.description%><br>
+      <%= "Date: #{t.date}" %><br>
+      <%= "Start Time: #{t.start_time}" %><br>
+      <%= "End Time: #{t.end_time}" %><br>
+    </div>
+    <% end %>
 <% else %>
 
   <%= @user.display_name %><br>
+  <h2>Top Tasks</h2>
+  <% @user.top_tasks.each do |t| %>
+    <div class="wrapper__body--item">
+      <%= t.description%><br>
+      <%= "Date: #{t.date}" %><br>
+      <%= "Start Time: #{t.start_time}" %><br>
+      <%= "End Time: #{t.end_time}" %><br>
+    </div>
+    <% end %>
 
   <br><%= form_tag("/requests", method: "post") do %>
     <%= hidden_field_tag(:id, @user.id) %>

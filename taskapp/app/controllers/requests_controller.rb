@@ -15,4 +15,23 @@ class RequestsController < ApplicationController
       redirect_to @user
     end
   end
+
+  def received
+
+
+    @requests = Request.where(user_id: current_user)
+
+    #
+    # @users.each do |user|
+    #   @requests << user.requests.where(friend_id: current_user)
+    # end
+  
+    render  :received
+  end
+
+  def sent
+    @requests = current_user.requests
+
+    render :sent
+  end
 end

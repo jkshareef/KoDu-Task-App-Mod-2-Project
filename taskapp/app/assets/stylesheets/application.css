@@ -27,9 +27,21 @@
    padding-top: 40px;
  }
 
+ .wrapper__body--item {
+   margin-top: 20px;
+   background-color: #2F5572
+ }
+
  body {
  	font-family: Tahoma;
  }
+
+ img {
+   max-width: 100%;
+   height: auto;
+ }
+
+
 
 
  /*For calendar in index.html.erb for tasks*/

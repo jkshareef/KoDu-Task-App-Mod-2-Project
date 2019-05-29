@@ -1,8 +1,10 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="large-hero">
+  <img src="https://www.audubon.org/sites/default/files/styles/hero_image/public/olympic.jpg?itok=h-g9jAl0" alt="olympic national park">
+    <div class="large-hero__text-content">
+    <h1>TaskApp</h1><br>
+    <h2>Log in</h2>
+    
     <%= form_for(:session, url: login_path) do |f| %>
 
       <%= f.label :user_name %>
@@ -17,5 +19,5 @@
     <% end %>
 
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  </div>
+    </div>
 </div>

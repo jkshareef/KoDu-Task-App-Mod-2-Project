@@ -1,0 +1,8 @@
+<%= render '/layouts/header' %><br>
+Sent Requests
+
+<% @requests.each do |request| %>
+<div class="wrapper__body--item">
+  <%= "#{User.find(request.friend_id).display_name}  Sent: #{request.created_at}" %><%= link_to "Accept", friends_path  %>
+</div>
+<% end %>

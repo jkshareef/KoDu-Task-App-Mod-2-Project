@@ -1,0 +1,12 @@
+<%= render '/layouts/header' %><br>
+Received Requests
+
+<% @requests.each do |request| %>
+<div class="wrapper__body--item"><%=" #{request.friend.display_name}  Received: #{request.created_at}"  %>
+  <%= form_tag(friends_path, method: "get") do %>
+    <%= hidden_field_tag(:user_id, current_user.id) %>
+    <%= hidden_field_tag(:friend_id, request.friend_id) %>
+
+
+</div>
+<% end %>
