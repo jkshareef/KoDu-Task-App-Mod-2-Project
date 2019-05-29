@@ -8,7 +8,8 @@
 <label>Comments: </label>
 <% @task.comments.each do |comment|%>
   <div class="comment">
-    <p><%=comment.content%> - <%=comment.commenter%></p>
+    <p><%=comment.content%> - <%=comment.commenter%></p><br>
   </div>
 <%end%>
+<br>
 <%= link_to "Edit", edit_comment_path%>

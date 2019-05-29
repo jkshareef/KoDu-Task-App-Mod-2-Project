@@ -4,15 +4,19 @@ class Task < ApplicationRecord
   has_many :comments
 
   def month
-    self.date.("-")[1].to_i
+    self.date.split("-")[1].to_i
+  end
+
+  def month_name
+    Date::MONTHNAMES[month]
   end
 
   def year
-    self.date.("-")[0].to_i
+    self.date.split("-")[0].to_i
   end
 
   def day
-    self.date.("-")[2].to_i
+    self.date.split("-")[2].to_i
   end
 
   def days_in_month
