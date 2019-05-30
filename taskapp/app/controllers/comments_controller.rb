@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = User.all.last.comments.build(comment_params)
+    @comment = current_user.comments.build(comment_params)
     @comment.save
     #@task = Task.find(params[:task_id])
     #@comment.task = @task
