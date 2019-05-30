@@ -1,7 +1,8 @@
 class Comment < ApplicationRecord
   belongs_to :task
+  belongs_to :user
 
   def commenter
-    self.task.user.display_name
+    self.user.display_name
   end
 end

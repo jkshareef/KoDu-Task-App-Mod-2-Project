@@ -1,4 +1,5 @@
 <h2>Task <%= @task.id%></h2>
+<%= link_to "Edit Task", edit_task_path(@task)%>
 <p>Descriptoin: <%= @task.description%></p>
 <p>Date: <%= @task.date%></p>
 <p>Time: <%= @task.duration%></p>
@@ -12,4 +13,9 @@
   </div>
 <%end%>
 <br>
-<%= link_to "Edit", edit_comment_path%>
+<%= form_for @task.comments.build do |f| %>
+  <p>Add a Comment: </p>
+  <%= f.hidden_field :task_id%>
+  <%= f.text_area :content%>
+  <%= f.submit "Enter"%>
+<% end %>

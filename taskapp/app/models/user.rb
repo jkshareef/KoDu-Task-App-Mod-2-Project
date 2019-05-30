@@ -2,8 +2,9 @@ class User < ApplicationRecord
   has_many :relationships, dependent: :destroy
   has_many :friends, through: :relationships
   has_many :requests
-  has_many :comments, through: :tasks
   has_many :tasks
+  has_many :comments
+
 
 
   validates :user_name, uniqueness: true
