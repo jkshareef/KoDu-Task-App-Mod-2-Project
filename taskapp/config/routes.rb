@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :relationships
   resources :users
 
+
   get '/', to: 'sessions#new'
   get '/login',   to: 'sessions#new'
   post '/login',  to: 'sessions#create'

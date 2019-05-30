@@ -1,11 +1,13 @@
 <h2>Task <%= @task.id%></h2>
-<%= link_to "Edit Task", edit_task_path(@task)%>
-<p>Descriptoin: <%= @task.description%></p>
-<p>Date: <%= @task.date%></p>
-<p>Time: <%= @task.duration%></p>
 <%if @task.urgent%>
   <p style="color: red">Urgent!!</p>
 <%end%>
+<%= link_to "Edit Task", edit_task_path(@task)%>
+<p></p>
+<p>Descriptoin: <%= @task.description%></p>
+<p>Date: <%= @task.date%></p>
+<p>Time: <%= @task.duration%></p>
+
 <label>Comments: </label>
 <% @task.comments.each do |comment|%>
   <div class="comment">
@@ -20,3 +22,9 @@
   <%= f.text_area :content%>
   <%= f.submit "Enter"%>
 <% end %>
+
+<div id="delete_button">
+  <%= form_tag @task, method: "delete" do %>
+    <%= submit_tag "Delete Task" %>
+    <% end %>
+</div>
