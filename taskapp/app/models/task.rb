@@ -2,6 +2,7 @@ class Task < ApplicationRecord
   has_many :suggestions
   belongs_to :user
   has_many :comments
+  validates :description, :date, :start_time, :end_time, presence: true
 
   def month
     self.date.split("-")[1].to_i
