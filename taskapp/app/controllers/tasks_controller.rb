@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     else
       @month = params[:month]
     end
-    @tasks = Task.all.select {|task| task.month_name == @month}
+    @tasks = current_user.tasks.select {|task| task.month_name == @month}
   end
 
   def show
