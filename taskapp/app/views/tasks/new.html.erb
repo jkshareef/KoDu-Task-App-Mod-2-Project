@@ -1,3 +1,5 @@
+<%= render "layouts/header"%>
+<div class="wrapper__body">
 <h1>Create Task</h1>
 
 <%= form_for @task do |f|%>
@@ -13,3 +15,4 @@
   <%= f.check_box :urgent %><br>
   <%= f.submit %>
 <%end%>
+</div>
