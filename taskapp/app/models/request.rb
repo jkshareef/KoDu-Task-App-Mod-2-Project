@@ -6,9 +6,9 @@ class Request < ApplicationRecord
   validates :friend_id, presence: true
 
   def self.create_request(user_id, friend_id)
-    sent_request = self.create(user_id: user_id, friend_id: friend_id, sent: true)
-    received_request = self.create(user_id: friend_id, friend_id: user_id, sent: false)
+    self.create(user_id: user_id, friend_id: friend_id)
   end
+
 
 
 end

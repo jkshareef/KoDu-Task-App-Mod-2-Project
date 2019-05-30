@@ -8,9 +8,11 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in user
-      redirect_to user
+      redirect_to users_path
     else
       # Create an error message.
+      flash[:errors] = @user.errors.full_messages
+      flash[:user_attributes] = @user.attributes
       render 'new'
     end
   end

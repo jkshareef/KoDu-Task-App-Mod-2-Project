@@ -18,14 +18,27 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Task App!"
       redirect_to @user
     else
-      render 'new'
+
+      flash[:errors] = @user.errors.full_messages
+      flash[:user_attributes] = @user.attributes
+      render :new
     end
   end
 
-  def friends
-    Relationship.create_reciprocal_for_ids(:user_id, :friend_id)
+
+
+  def search
+    @users = User.all.select {|user| user.user_name.include?(params[:q])}
+
+    render :index
   end
-  
+
+  def friend_list
+    @relationships = self.relationships
+
+    redirect_to :index
+  end
+
 
 
 
@@ -41,7 +54,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:display_name, :user_name, :password, :password_confirmation)
+    params.require(:user).permit(:display_name, :user_name, :password, :password_confirmation, :email)
   end
 
   def set_user

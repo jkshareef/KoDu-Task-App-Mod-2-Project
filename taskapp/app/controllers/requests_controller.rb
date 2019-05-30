@@ -17,21 +17,11 @@ class RequestsController < ApplicationController
   end
 
   def received
-
-
-    @requests = Request.where(user_id: current_user)
-
-    #
-    # @users.each do |user|
-    #   @requests << user.requests.where(friend_id: current_user)
-    # end
-  
-    render  :received
+    @requests = current_user.received_requests
   end
 
   def sent
-    @requests = current_user.requests
-
+    @requests = current_user.sent_requests
     render :sent
   end
 end

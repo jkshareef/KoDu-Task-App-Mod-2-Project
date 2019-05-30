@@ -8,15 +8,17 @@ Rails.application.routes.draw do
   resources :relationships
   resources :users
 
-  get '/', to: 'users#index'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
+  get '/', to: 'sessions#new'
+  get '/login',   to: 'sessions#new'
+  post '/login',  to: 'sessions#create'
   get '/logout',  to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  get '/friends', to: 'user#friends'
+  get '/friends', to: 'users#friend_list'
+  post '/friends', to: 'relationships#friends'
   get '/received', to: 'requests#received'
   get '/sent', to: 'requests#sent'
+  get '/search', to: 'users#search'
 
 
 
