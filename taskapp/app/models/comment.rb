@@ -18,7 +18,7 @@ class Comment < ApplicationRecord
     elsif diff / 3600 < 1
       "#{(diff % 3600) / 60}min(s)"
     else
-      "#{diff / 3600} hour #{(diff % 3600) / 60}min(s)"
+      "#{diff / 3600} hour(s) #{(diff % 3600) / 60}min(s)"
     end
   end
 end
