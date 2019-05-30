@@ -28,11 +28,10 @@
 
  .wrapper__body--item {
    margin-top: 20px;
-   background-color: #2F5572
  }
 
  .wrapper__body--item-feed {
-   background: url()
+   background: url();
 
  }
  .large-hero {
@@ -150,6 +149,10 @@
     position: relative;
     top: -80px;
     border: 6px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .search__result {
+    max-width: 50%;
   }
 
  .btn_custom {
