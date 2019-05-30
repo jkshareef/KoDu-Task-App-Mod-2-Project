@@ -65,8 +65,8 @@
  .large-hero--text-content-login {
    position: absolute;
    top: 50%;
-   transform: translateY(-130%);
-   left: 0;
+   transform: translateY(-100%);
+   left: 100px;
    width: 100%;
    text-align: center;
  }
