@@ -325,10 +325,11 @@
 
  #my_task {
    padding-top: 80px;
+ }
 
- /*for navbar*/
- .primary-nav--pull-right {
-
+ .row .urgent a {
+   color: #E1126C;
+   text-decoration: none;
  }
 
  /*delete button in show for task*/
