@@ -1,5 +1,12 @@
 <%= render "layouts/header"%>
-<h1>My Tasks</h1>
+
+
+<style>
+
+
+</style>
+
+<h1 id="my_task">My Tasks</h1>
 
 <div id="months_buttons">
 <%= render "layouts/months"%>
@@ -22,6 +29,9 @@
     <% while k < Date.new(2019, Date::MONTHNAMES.index(@month), -1).day + 1%>
     <td class="day">
       <div class="date"><%= k%></div>
+      <div class="add_button">
+        <%= link_to "+", new_task_path(target_date: "2019-#{Date::MONTHNAMES.index(@month)}-#{k}")%>
+      </div>
         <% @tasks.each do |task|%>
 
           <% if task.day == k%>
@@ -42,6 +52,7 @@
           </div>
         <%end%>
       <%end%>
+
     </td>
 
     <%k += 1%>

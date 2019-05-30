@@ -19,7 +19,7 @@ am_pm = ["am", "pm"]
 true_false = [true, false]
 
 
-100.times do
+20.times do
   User.create(display_name: Faker::Name.name, user_name: Faker::Twitter.screen_name, password: 'passw0rd', email: Faker::Internet.email)
 end
 
@@ -30,7 +30,7 @@ end
 # end
 
 User.all.each do |user|
-  rand(1..5).times do
+  rand(1..2).times do
     task = Task.create(description: Faker::Hipster.sentence, date: "2019-#{months.sample}-#{single_days.sample}", start_time: "#{rand(1-12)}#{am_pm.sample}", end_time: "#{rand(1-12)}#{am_pm.sample}", user_id: user.id, urgent: true_false.sample)
   end
 end

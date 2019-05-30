@@ -16,9 +16,19 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    target_date = params[:target_date]
+    target_date = target_date.split('-')
+    if target_date[1].to_i < 10
+      target_date[1] = "0#{target_date[1]}"
+    end
+    if target_date[2].to_i < 10
+      target_date[2] = "0#{target_date[2]}"
+    end
+    @task.date = target_date.join('-')
   end
 
   def create
+
     @task = Task.new(task_params)
     @task.user = current_user
     if @task.save
@@ -42,6 +52,13 @@ class TasksController < ApplicationController
     else
       render :edit
     end
+
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    redirect_to tasks_path
 
   end
 

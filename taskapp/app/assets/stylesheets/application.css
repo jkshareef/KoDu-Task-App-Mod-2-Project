@@ -213,10 +213,11 @@
  	text-align: center;
  	margin-bottom: 5px;
  	padding: 4px;
- 	background: #333;
- 	color: #fff;
+ 	/*background: #333;*/
+ 	color: #333;
  	width: 20px;
- 	border-radius: 50%;
+  font-weight: bold;
+ 	/*border-radius: 50%;*/
    flex: 0 0 auto;
    align-self: flex-end;
  }
@@ -267,7 +268,15 @@
    font-size: large;
  }
 
- /*for navbar*/
- .primary-nav--pull-right {
-   
+ #my_task {
+   padding-top: 80px;
  }
+
+ /*delete button in show for task*/
+ #delete_button form input[type="submit"] {
+   color: red;
+   border: none;
+   padding: 16px 0;
+   font-size: normal;
+ }
+ /*for navbar*/

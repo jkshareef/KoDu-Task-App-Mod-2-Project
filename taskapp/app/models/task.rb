@@ -3,6 +3,8 @@ class Task < ApplicationRecord
   belongs_to :user
   has_many :comments
   validates :description, :date, :start_time, :end_time, presence: true
+  #validates :start_time, :end_time, uniqueness: true
+  validates :urgent, inclusion: { in: [true, false] }
 
   def month
     self.date.split("-")[1].to_i
