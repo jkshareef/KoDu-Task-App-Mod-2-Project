@@ -54,7 +54,7 @@
 
                             <div class="feed">
                               <div class="feed__photo">
-                                <%= image_tag(image_array.sample, ) %>
+                                <%= image_tag(Faker::Avatar.image) %>
                               </div>
                               <p><%= task.description %></p>
                               <h3><%= "Start Date: #{task.date}" %><br></h3>
