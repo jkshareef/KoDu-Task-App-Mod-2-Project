@@ -15,7 +15,6 @@
  */
 
  .wrapper {
-   overflow: hidden;
    padding-left: 18px;
    padding-right: 18px;
    max-width: 1236px;
@@ -24,12 +23,131 @@
  }
 
  .wrapper__body {
-   padding-top: 40px;
+   padding-top: 80px;
+ }
+
+ .wrapper__body--item {
+   margin-top: 20px;
+   background-color: #2F5572
+ }
+
+ .large-hero {
+   position: relative;
+   z-index: 0;
+ }
+
+ .large-hero-graphic {
+   opacity: 0.6;
+ }
+
+ .large-hero--text-content {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-150%);
+   left: 0;
+   width: 100%;
+   text-align: center;
+ }
+
+ .large-hero--text-content-search {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-150%);
+   left: 50px;
+   width: 100%;
+   text-align: center;
+ }
+
+ .large-hero--text-content-login {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-130%);
+   left: 0;
+   width: 100%;
+   text-align: center;
+ }
+
+ .large-hero--text-content-create {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-130%);
+   left: 100px;
+   width: 100%;
+   text-align: center;
+ }
+
+ .large-hero--text-content-higher {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-130%);
+   left: 10px;
+   width: 100%;
+   text-align: center;
+ }
+
+
+
+ .large-hero--text-content-lower {
+   position: absolute;
+   top: 50%;
+   transform: translateY(100%);
+   width: 100%;
+   text-align: center;
+ }
+
+ .large_hero--list {
+   position: relative;
+   display: inline-block;
+
+ }
+
+
+ .btn_custom {
+   background-color: #2F5572;
+   color: #FFF;
+   text-decoration: none;
+   border-radius: .25rem;
+   padding: .6rem 1rem;
+   display: inline-block;
+ }
+
+ .btn_custom-login {
+   background-color: #2F5572;
+   color: #FFF;
+   text-decoration: none;
+   border-radius: .25rem;
+   padding: 0.1rem 1rem;
+   display: inline-block;
+ }
+
+ .btn_custom-drop {
+   background-color: #2F5572;
+   color: #FFF;
+   padding: .6rem 1.2rem;
+ }
+
+ .btn_custom--search-label {
+   background-color: rgba(47, 85, 114, 0.3);
+   color: #FFF;
+   padding: .6rem 1.2rem;
+   display: inline-block;
+ }
+
+ .text-visibility {
+   background-color: rgba(47, 85, 114, 0.3);
+   color: #FFF;
  }
 
  body {
  	font-family: Tahoma;
  }
+
+ img {
+   max-width: 100%;
+   height: auto;
+ }
+
+
 
 
  /*For calendar in index.html.erb for tasks*/

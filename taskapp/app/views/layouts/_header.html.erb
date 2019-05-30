@@ -8,12 +8,20 @@
         <% if logged_in? %>
           <ul class="primary-nav__ul">
 
-            <li class="primary-nav__li"><%= link_to "Log out", logout_path, class: "btn", method: :delete %></li>
-            <li class="primary-nav__li"><%= link_to "Settings", '#', class: "btn" %></li>
-
-            <li class="primary-nav__li"><%= link_to "Friends", friends_path, class: "btn" %></li>
-            <li class="primary-nav__li"><%= link_to "Profile", current_user, class: "btn"%></li>
+            <li class="primary-nav__li"><%= link_to "Log out", logout_path, class: "btn_custom" %></li>
+            <li class="primary-nav__li"><%= link_to "Settings", '#', class: "btn_custom" %></li>
           </ul>
+            <div class="primary-nav__li dropdown">
+              <button class="btn  btn-secondary dropdown-toggle btn_custom-drop" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Friends</button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <%= link_to "Friend List", friends_path,  class: "dropdown-item"%>
+                <%= link_to "Received Requests", received_path, class: "dropdown-item" %>
+                <%= link_to "Sent Requests", sent_path, class: "dropdown-item"%>
+              </div>
+            </div>
+            <ul class="primary-nav__ul">
+              <li class="primary-nav__li"><%= link_to "Profile", current_user, class: "btn_custom" %></li>
+            </ul>
         <% else %>
 
           <ul class="primary-nav__ul">

@@ -15,4 +15,13 @@ class RequestsController < ApplicationController
       redirect_to @user
     end
   end
+
+  def received
+    @requests = current_user.received_requests
+  end
+
+  def sent
+    @requests = current_user.sent_requests
+    render :sent
+  end
 end

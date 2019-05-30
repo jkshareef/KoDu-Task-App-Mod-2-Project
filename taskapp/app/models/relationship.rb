@@ -10,9 +10,12 @@ class Relationship < ApplicationRecord
 
 
   def self.create_reciprocal_for_ids(user_id, friend_id)
+
     user_friendship = Relationship.create(user_id: user_id, friend_id: friend_id)
     friend_friendship = Relationship.create(user_id: friend_id, friend_id: user_id)
-    byebug
+    Request.where(user_id: user_id, friend_id: friend_id).destroy_all
+    Request.where(user_id: friend_id, friend_id: user_id).destroy_all
+
   end
 
   def self.destroy_reciprocal_for_ids(user_id, friend_id)

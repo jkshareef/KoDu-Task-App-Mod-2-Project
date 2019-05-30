@@ -2,6 +2,7 @@
 
 .site-header {
   // position: absolute;
+  position: fixed;
   z-index: 2;
   width: 100%;
   background-color: rgba(47, 85, 114, 0.3);
@@ -18,16 +19,6 @@
 
 
 }
-
-.btn {
-  background-color: #2F5572;
-  color: #FFF;
-  text-decoration: none;
-  padding: .6rem 1.2rem;
-  display: inline-block;
-}
-
-
 
 .primary-nav__ul > ul {
   margin: 0;

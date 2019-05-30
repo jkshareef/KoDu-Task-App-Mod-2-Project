@@ -1,24 +1,36 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<%= render 'layouts/header' %>
+<%= render 'layouts/hero' %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<div class="wrapper large-hero--text-content-create">
+
     <%= form_for(@user, url: signup_path) do |f| %>
 
+      <div class="btn_custom-login">
+        <%= f.label :display_name %>
+      </div>
+      <%= f.text_field :display_name%>
+      <div class="btn_custom-login">
+        <%= f.label :user_name %>
+      </div>
+      <%= f.text_field :user_name %>
+      <div class="btn_custom-login">
+        <%= f.label :email %>
+      </div>
+      <%= f.email_field :email%>
+      <div class="wrapper large-hero--text-content-lower">
 
-      <%= f.label :display_name %>
-      <%= f.text_field :display_name, class: 'form-control' %>
 
-      <%= f.label :user_name %>
-      <%= f.text_field :user_name, class: 'form-control' %>
+      <div class="btn_custom-login">
+          <%= f.label :password %>
+      </div>
+      <%= f.password_field :password%>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <div class="btn_custom-login">
+        <%= f.label :password_confirmation, "Confirmation" %>
+      </div>
+      <%= f.password_field :password_confirmation%>
+      </div>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
-</div>

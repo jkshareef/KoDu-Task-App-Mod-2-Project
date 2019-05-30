@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'sessions/new'
   resources :requests
   resources :comments
@@ -6,13 +7,18 @@ Rails.application.routes.draw do
   resources :tasks
   resources :relationships
   resources :users
-  get '/', to: 'users#index'
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+
+  get '/', to: 'sessions#new'
+  get '/login',   to: 'sessions#new'
+  post '/login',  to: 'sessions#create'
+  get '/logout',  to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  get '/friends', to: 'user#friends'
+  get '/friends', to: 'users#friend_list'
+  post '/friends', to: 'relationships#friends'
+  get '/received', to: 'requests#received'
+  get '/sent', to: 'requests#sent'
+  get '/search', to: 'users#search'
 
 
 

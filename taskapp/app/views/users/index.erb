@@ -1,1 +1,27 @@
+<%= render 'layouts/header' %>
+<%= render 'layouts/hero' %>
+<div class="wrapper large-hero--text-content-search">
 
+
+  <%= form_tag("/search", method: "get") do %>
+  <div class="btn_custom--search-label">
+    <%= label_tag(:q, "Search By Username:") %>
+  </div>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+
+</div>
+
+
+
+<% if @users != nil %>
+  <div id="results">
+  <% @users.each do |user| %>
+  <div class="wrapper wrapper__body--item large-hero--list">
+    <h2><%= link_to user.display_name, user %></h2><br>
+    <h4><%= link_to user.user_name, user %></h4>
+  </div>
+    <% end %>
+  </div>
+  <% end %>
