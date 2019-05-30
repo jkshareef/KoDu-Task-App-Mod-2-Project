@@ -15,7 +15,6 @@ class Relationship < ApplicationRecord
     friend_friendship = Relationship.create(user_id: friend_id, friend_id: user_id)
     Request.where(user_id: user_id, friend_id: friend_id).destroy_all
     Request.where(user_id: friend_id, friend_id: user_id).destroy_all
-
   end
 
   def self.destroy_reciprocal_for_ids(user_id, friend_id)

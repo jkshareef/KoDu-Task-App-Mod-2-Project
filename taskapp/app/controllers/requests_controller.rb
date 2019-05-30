@@ -18,6 +18,7 @@ class RequestsController < ApplicationController
 
   def received
     @requests = current_user.received_requests
+    
   end
 
   def sent

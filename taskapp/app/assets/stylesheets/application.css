@@ -31,6 +31,10 @@
    background-color: #2F5572
  }
 
+ .wrapper__body--item-feed {
+   background: url()
+
+ }
  .large-hero {
    position: relative;
    z-index: 0;
@@ -101,6 +105,52 @@
 
  }
 
+ .section-title {
+  font-size: 2.55rem;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 100px;
+  }
+
+
+  .section-title-main {
+   font-size: 2.55rem;
+   font-weight: 300;
+   text-align: center;
+   }
+
+   .section-title_icon {
+
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-bottom: .6rem;
+  }
+
+  .top-task {
+    background-color: rgba(47, 85, 114, 0.7);
+    padding: 0 18px 1px 18px;
+    margin-bottom: 98px;
+    margin-top: 100px;
+  }
+
+  .feed {
+    background-color: rgba(47, 85, 114, 0.3);
+    padding: 0 18px 1px 18px;
+    margin-bottom: 98px;
+    margin-top: 100px;
+  }
+
+  .feed__photo {
+    border-radius: 80px;
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto -80px auto;
+    position: relative;
+    top: -80px;
+    border: 6px solid rgba(255, 255, 255, 0.8);
+  }
 
  .btn_custom {
    background-color: #2F5572;
@@ -133,13 +183,17 @@
    display: inline-block;
  }
 
+ .btn_custom_small {
+   font-weight: 100;
+ }
+
  .text-visibility {
    background-color: rgba(47, 85, 114, 0.3);
    color: #FFF;
  }
 
  body {
- 	font-family: Tahoma;
+ 	font-family: 'Noto Serif JP', serif;
  }
 
  img {
@@ -268,8 +322,13 @@
    font-size: large;
  }
 
+
  #my_task {
    padding-top: 80px;
+
+ /*for navbar*/
+ .primary-nav--pull-right {
+
  }
 
  /*delete button in show for task*/

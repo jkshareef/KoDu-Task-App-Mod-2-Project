@@ -39,6 +39,23 @@ class User < ApplicationRecord
     @requests = Request.all.where(user_id: self.id)
   end
 
+  def friend_feed
+    @tasks = friends.map {|friend| friend.top_tasks}
+  end
+
+  def friend_feed_rows
+    count = 0
+    friend_feed.each do |task_list|
+      if task_list.empty?
+        next
+      end
+      task_list.each do |task|
+        count += 1
+      end
+    end
+    count / 3
+  end
+
 
 
 end
