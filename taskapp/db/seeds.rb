@@ -23,11 +23,11 @@ true_false = [true, false]
   User.create(display_name: Faker::Name.name, user_name: Faker::Twitter.screen_name, password: 'passw0rd', email: Faker::Internet.email)
 end
 
-# 10.times do
-#   user_1 = User.find(rand(1..50))
-#   user_2 = User.find(rand(51..100))
-#   Relationship.create_reciprocal_for_ids(user_1, user_2)
-# end
+200.times do
+  user_1 = User.find(rand(1..50))
+  user_2 = User.find(rand(51..100))
+  Relationship.create_reciprocal_for_ids(user_1.id, user_2.id)
+end
 
 User.all.each do |user|
   rand(1..5).times do
