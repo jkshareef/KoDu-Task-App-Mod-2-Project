@@ -9,7 +9,8 @@
 <label>Comments: </label>
 <% @task.comments.each do |comment|%>
   <div class="comment">
-    <p><%=comment.content%> - <%=comment.commenter%></p><br>
+    <p><%=comment.content%></p>
+    <p><%=comment.commenter%> - <%=comment.time_passed%></p>
   </div>
 <%end%>
 <br>
