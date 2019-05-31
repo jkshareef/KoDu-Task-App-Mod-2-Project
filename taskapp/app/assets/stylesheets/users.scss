@@ -129,3 +129,21 @@
  background: #f5f5f5;
  color: #666;
 }
+
+
+#months-buttons-custom-view{
+  margin: 0 auto;
+  /*postion: absolute;*/
+  margin-right: 69%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 30%;
+
+}
+
+#months-buttons-custom-view form input[type="submit"]{
+  color: #14433F;
+  border: none;
+  padding: 0px 0px;
+  font-size: small;
+}

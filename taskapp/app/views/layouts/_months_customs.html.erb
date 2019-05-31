@@ -1,0 +1,12 @@
+<%months_array = []%>
+<%i = 1%>
+<% 12.times do %>
+  <%months_array << Date::MONTHNAMES[i]%>
+  <%i += 1%>
+<%end%>
+<% months_array.each do |month|%>
+  <%= form_tag(current_user, method: "get") do %>
+    <%= hidden_field_tag(:month, month) %>
+    <%= submit_tag(month) %>
+  <% end %>
+<%end%>
