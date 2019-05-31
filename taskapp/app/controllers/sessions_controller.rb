@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
       redirect_to users_path
     else
       # Create an error message.
-      flash[:errors] = @user.errors.full_messages
-      flash[:user_attributes] = @user.attributes
-      render 'new'
+      @error_message = "Incorrect username and/or password"
+
+      render :new
     end
   end
 
