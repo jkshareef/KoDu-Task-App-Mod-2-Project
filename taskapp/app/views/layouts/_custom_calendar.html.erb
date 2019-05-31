@@ -1,7 +1,7 @@
 <div class="wrapper-for-calendar-profile">
 
 <table id="calendar-user">
-  <caption><%= Date::MONTHNAMES[Time.now.month]%> 2019</caption>
+  <caption><%= @month%> 2019</caption>
   <tr class="weekdays">
     <th scope="col">Sun</th>
     <th scope="col">Mon</th>
@@ -12,13 +12,23 @@
     <th scope="col">Sat</th>
   </tr>
 
-  <%= render "layouts/days_other_month_for_profile"%>
+  <%= render "layouts/days_other_month"%>
   <%k = 1%>
-    <% while k < Date.new(2019, Date::MONTHNAMES.index(Date::MONTHNAMES[Time.now.month]), -1).day + 1%>
+    <% while k < Date.new(2019, Date::MONTHNAMES.index(@month), -1).day + 1%>
     <td class="day">
       <div class="date"><%= k%></div>
+        <%count = 0%>
+      <% @tasks.each do |task|%>
 
-
+        <% if task.day == k%>
+          <%count += 1%>
+        <%end%>
+    <%end%>
+      <% if count > 0 %>
+        <div class="event">
+          <%= count%>
+        </div>
+      <%end%>
     </td>
 
     <%k += 1%>
