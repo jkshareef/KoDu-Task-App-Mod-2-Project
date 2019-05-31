@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
 
+
   end
 
   def new
@@ -11,6 +12,21 @@ class UsersController < ApplicationController
       @user = User.new(flash[:user_attributes])
     else
       @user = User.new
+    end
+  end
+
+  def show
+
+    if logged_in?
+      @month = nil
+      if params[:month] == nil
+        @month = Date::MONTHNAMES[Time.now.month]
+      else
+        @month = params[:month]
+      end
+      @tasks = current_user.tasks.select {|task| task.month_name == @month}
+    else
+      redirect_to login_path
     end
   end
 
