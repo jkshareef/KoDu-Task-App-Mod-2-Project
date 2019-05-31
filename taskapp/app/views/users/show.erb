@@ -1,5 +1,6 @@
 <%= render "/layouts/header" %>
 
+
 <% if current_user == @user %>
   <div class="wrapper">
     <div class="wrapper__body">
@@ -9,29 +10,32 @@
       <div class="wrapper__body--item">
         <h4>Top Tasks</h4>
       </div>
-      <div class="row">
-        <div class="col py-3 px-lg-5 border bg-light top-task">
+      <!--<div class="row">-->
+        <div class="grid-container">
+        <!--<div class="col py-3 px-lg-5 border bg-light top-task">-->
+        <div class="grid-item">
           <% if @user.top_tasks[0] != nil %>
             <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
             <h6><%=@user.top_tasks[0].date%></h6>
-            <h6><%=@user.top_tasks[0].start_time%></h6>
-            <h6><%=@user.top_tasks[0].end_time%></h6>
+
+            <h6><%=@user.top_tasks[0].start_time%> to <%=@user.top_tasks[0].end_time%></h6>
+
             <% end %>
         </div>
-        <div class="col py-3 px-lg-5 border bg-light top-task">
+        <!--<div class="col py-3 px-lg-5 border bg-light top-task">-->
+        <div class="grid-item">
           <% if @user.top_tasks[1] != nil %>
           <h3 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
           <h6><%=@user.top_tasks[1].date%></h6>
-          <h6><%=@user.top_tasks[1].start_time%></h6>
-          <h6><%=@user.top_tasks[1].end_time%></h6>
+          <h6><%=@user.top_tasks[1].start_time%> to <%=@user.top_tasks[1].end_time%></h6>
           <% end %>
         </div>
-        <div class="col py-3 px-lg-5 border bg-light top-task">
+        <!--<div class="col py-3 px-lg-5 border bg-light top-task">-->
+        <div class="grid-item">
           <% if @user.top_tasks[2] != nil %>
           <h3 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h3>
           <h6><%=@user.top_tasks[2].date%></h6>
-          <h6><%=@user.top_tasks[2].start_time%></h6>
-          <h6><%=@user.top_tasks[2].end_time%></h6>
+          <h6><%=@user.top_tasks[2].start_time%> to <%=@user.top_tasks[2].end_time%></h6>
           <% end %>
         </div>
       </div>
