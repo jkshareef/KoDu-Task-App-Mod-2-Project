@@ -29,7 +29,7 @@
     <%end%>
       <% if count > 0 %>
         <div class="event">
-          <%= count%>
+          <%= link_to count, tasks_path(month: @month)%>
         </div>
       <%end%>
     </td>
