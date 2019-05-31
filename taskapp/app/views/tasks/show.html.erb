@@ -1,4 +1,6 @@
 <%= render "layouts/header"%>
+
+<% if current_user == @task.user %>
 <div class="wrapper__body">
 <div class="form-style-9">
 <h2><%= @task.description.split[0]%>...</h2>
@@ -32,4 +34,38 @@
     <% end %>
 </div>
 </div>
+<% else %>
+
+<div class="wrapper__body">
+<h2><%= @task.description.split[0]%>...</h2>
+<%if @task.urgent%>
+  <p style="color: red">Urgent!!</p>
+<%end%>
+
+<p>Description: <%= @task.description%></p>
+<p>Date: <%= @task.date%></p>
+<p>Time: <%= @task.duration%></p>
+
+<label>Comments: </label>
+<% @task.comments.each do |comment|%>
+  <div class="comment">
+    <p><%=comment.content%></p>
+    <p><%=comment.commenter%> - <%=comment.time_passed%></p>
+  </div>
+<%end%>
+<br>
+<%= form_for @task.comments.build do |f| %>
+  <p>Add a Comment: </p>
+  <%= f.hidden_field :task_id%>
+  <%= f.text_area :content%>
+  <%= f.submit "Enter"%>
+<% end %>
+
+<div id="delete_button">
+  <%= form_tag @task, method: "delete" do %>
+    <%= submit_tag "Delete Task" %>
+    <% end %>
 </div>
+</div>
+<% end %>
+

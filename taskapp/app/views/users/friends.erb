@@ -2,11 +2,12 @@
 <div class="wrapper">
   <div class="wrapper__body">
       <div class="wrapper__small">
+        <% image_array = ["cat-hi-dpi.jpg", "jane-hi-dpi.jpg", "john-hi-dpi.jpg", Faker::Avatar.image] %>
         <% @friends.each do |friend| %>
 
         <div class="feed">
           <div class="feed__photo">
-            <%= image_tag(Faker::Avatar.image) %>
+            <%= link_to image_tag(image_array.sample), friend %>
           </div>
           <h3><%= link_to friend.display_name, friend %></h3>
           <h3><%= link_to "@#{friend.user_name}", friend%><br></h3>
