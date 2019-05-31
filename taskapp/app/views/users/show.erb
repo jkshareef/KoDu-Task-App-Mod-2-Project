@@ -1,7 +1,7 @@
 <%= render "/layouts/header" %>
 
 
-
+<% byebug %>
 <% if current_user == @user %>
   <div class="wrapper">
     <div class="wrapper__body">
@@ -14,26 +14,26 @@
       <div class="row">
         <div class="col py-3 px-lg-5 border bg-light top-task">
           <% if @user.top_tasks[0] != nil %>
-            <p class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></p>
-            <h3><%=@user.top_tasks[0].date%></h3>
-            <h3><%=@user.top_tasks[0].start_time%></h3>
-            <h3><%=@user.top_tasks[0].end_time%></h3>
+            <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
+            <h6><%=@user.top_tasks[0].date%></h3>
+            <h6><%=@user.top_tasks[0].start_time%></h3>
+            <h6><%=@user.top_tasks[0].end_time%></h3>
             <% end %>
         </div>
         <div class="col py-3 px-lg-5 border bg-light top-task">
           <% if @user.top_tasks[1] != nil %>
-          <p class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></p>
-          <h3><%=@user.top_tasks[1].date%></h3>
-          <h3><%=@user.top_tasks[1].start_time%></h3>
-          <h3><%=@user.top_tasks[1].end_time%></h3>
+          <ph3class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
+          <h6><%=@user.top_tasks[1].date%></h6>
+          <h6><%=@user.top_tasks[1].start_time%></h6>
+          <h6><%=@user.top_tasks[1].end_time%></h6>
           <% end %>
         </div>
         <div class="col py-3 px-lg-5 border bg-light top-task">
           <% if @user.top_tasks[2] != nil %>
-          <p class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></p>
-          <h3><%=@user.top_tasks[2].date%></h3>
-          <h3><%=@user.top_tasks[2].start_time%></h3>
-          <h3><%=@user.top_tasks[2].end_time%></h3>
+          <h3 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h3>
+          <h6><%=@user.top_tasks[2].date%></h6>
+          <h6><%=@user.top_tasks[2].start_time%></h6>
+          <h6><%=@user.top_tasks[2].end_time%></h6>
           <% end %>
         </div>
       </div>
@@ -60,8 +60,8 @@
                           <%= link_to image_tag(image_array.sample), task.user %>
 
                         </div>
-                        <p><%= link_to task.description, task %></p>
-                        <h3><%= "Start Date: #{task.date}" %><br></h3>
+                        <h4><%= link_to task.description, task %></h4>
+                        <h4><%= "Start Date: #{task.date}" %><br></h4>
                         <h4><%= "By: #{task.user.display_name}" %></h4>
                       </div>
                   <% end %>
@@ -85,26 +85,26 @@
                     <div class="row">
                       <div class="col py-3 px-lg-5 border bg-light top-task">
                         <% if @user.top_tasks[0] != nil %>
-                          <p class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></p>
-                          <h3><%=@user.top_tasks[0].date%></h3>
-                          <h3><%=@user.top_tasks[0].start_time%></h3>
-                          <h3><%=@user.top_tasks[0].end_time%></h3>
+                          <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
+                          <h6><%=@user.top_tasks[0].date%></h6>
+                          <h6><%=@user.top_tasks[0].start_time%></h6>
+                          <h6><%=@user.top_tasks[0].end_time%></h6>
                           <% end %>
                       </div>
                       <div class="col py-3 px-lg-5 border bg-light top-task">
                         <% if @user.top_tasks[1] != nil %>
-                        <p class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></p>
-                        <h3><%=@user.top_tasks[1].date%></h3>
-                        <h3><%=@user.top_tasks[1].start_time%></h3>
-                        <h3><%=@user.top_tasks[1].end_time%></h3>
+                        <h3 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
+                        <h6><%=@user.top_tasks[1].date%></h6>
+                        <h6><%=@user.top_tasks[1].start_time%></h6>
+                        <h6><%=@user.top_tasks[1].end_time%></h6>
                         <% end %>
                       </div>
                       <div class="col py-3 px-lg-5 border bg-light top-task">
                         <% if @user.top_tasks[2] != nil %>
-                        <p class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></p>
-                        <h3><%=@user.top_tasks[2].date%></h3>
-                        <h3><%=@user.top_tasks[2].start_time%></h3>
-                        <h3><%=@user.top_tasks[2].end_time%></h3>
+                        <h3 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h3>
+                        <h6><%=@user.top_tasks[2].date%></h6>
+                        <h6><%=@user.top_tasks[2].start_time%></h6>
+                        <h6><%=@user.top_tasks[2].end_time%></h6>
                         <% end %>
                       </div>
                     </div>
@@ -134,26 +134,26 @@
                       <div class="row">
                         <div class="col py-3 px-lg-5 border bg-light top-task">
                           <% if @user.top_tasks[0] != nil %>
-                            <p class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></p>
-                            <h3><%=@user.top_tasks[0].date%></h3>
-                            <h3><%=@user.top_tasks[0].start_time%></h3>
-                            <h3><%=@user.top_tasks[0].end_time%></h3>
+                            <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
+                            <h6><%=@user.top_tasks[0].date%></h6>
+                            <h6><%=@user.top_tasks[0].start_time%></h6>
+                            <h6><%=@user.top_tasks[0].end_time%></h6>
                             <% end %>
                         </div>
                         <div class="col py-3 px-lg-5 border bg-light top-task">
                           <% if @user.top_tasks[1] != nil %>
-                          <p class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></p>
-                          <h3><%=@user.top_tasks[1].date%></h3>
-                          <h3><%=@user.top_tasks[1].start_time%></h3>
-                          <h3><%=@user.top_tasks[1].end_time%></h3>
+                          <h3 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
+                          <h6><%=@user.top_tasks[1].date%></h6>
+                          <h6><%=@user.top_tasks[1].start_time%></h6>
+                          <h6><%=@user.top_tasks[1].end_time%></h6>
                           <% end %>
                         </div>
                         <div class="col py-3 px-lg-5 border bg-light top-task">
                           <% if @user.top_tasks[2] != nil %>
-                          <p class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></p>
-                          <h3><%=@user.top_tasks[2].date%></h3>
-                          <h3><%=@user.top_tasks[2].start_time%></h3>
-                          <h3><%=@user.top_tasks[2].end_time%></h3>
+                          <h3 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h3>
+                          <h6><%=@user.top_tasks[2].date%></h6>
+                          <h6><%=@user.top_tasks[2].start_time%></h6>
+                          <h6><%=@user.top_tasks[2].end_time%></h6>
                           <% end %>
                         </div>
                       </div>
