@@ -1,12 +1,8 @@
 <%= render "layouts/header"%>
 
 
-<style>
 
-
-</style>
-
-<h1 id="my_task">My Tasks</h1>
+<h1 id="my_task"><%=current_user.display_name%>'s Tasks</h1>
 
 <div id="months_buttons">
 <%= render "layouts/months"%>
