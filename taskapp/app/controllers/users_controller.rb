@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if flash[:user_attributes]
+      @user = User.new(flash[:user_attributes])
+    else
+      @user = User.new
+    end
   end
 
 
@@ -21,7 +25,11 @@ class UsersController < ApplicationController
 
       flash[:errors] = @user.errors.full_messages
       flash[:user_attributes] = @user.attributes
-      render :new
+
+      render(
+        html: <%="<script>alert(#{flash[:errors].join('-----')})</script>"%>.html_safe,
+        action: :new
+      )
     end
   end
 

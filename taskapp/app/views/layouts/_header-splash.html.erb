@@ -1,0 +1,31 @@
+<header class="site-header-splash">
+  <div class="wrapper">
+    <div class="site-header__logo">
+        <%= link_to "KoDu", users_path%>
+    </div>
+
+        <nav class="primary-nav--pull-right">
+        <% if logged_in? %>
+          <ul class="primary-nav__ul">
+
+            <li class="primary-nav__li"><%= link_to "Log out", logout_path%></li>
+            <li class="primary-nav__li"><%= link_to "Settings", '#'%></li>
+            <li class="primary-nav__li dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Friends</a>
+              <div class="dropdown-content">
+                <%= link_to "Friend List", friends_path%>
+                <%= link_to "Received Requests", received_path%>
+                <%= link_to "Sent Requests", sent_path%>
+              </div>
+            </li>
+              <li class="primary-nav__li"><%= link_to "Profile", current_user%></li>
+            </ul>
+        <% else %>
+
+          <ul class="primary-nav__ul">
+            <li class="primary-nav__li"><%= link_to "Log in", login_path, class: "primary-nav__a" %></li>
+          </ul>
+        <% end %>
+    </nav>
+  </div>
+</header>
