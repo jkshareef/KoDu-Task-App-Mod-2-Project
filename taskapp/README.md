@@ -55,7 +55,7 @@ Run ```rails db:setup``` to run migrations and seed the database
 
    Below you will find a video that demonstrates how you can use the program:
 
-   [Demo Video](https://youtu.be/WdGJomC0RIU)
+   [Demo Video](https://youtu.be/BlhWCbt2oUI)
 
 
 
