@@ -1,0 +1,11 @@
+<% start_day = Date.new(2019, Date::MONTHNAMES.index(Date::MONTHNAMES[Time.now.month]), 1).strftime('%A')%>
+<% days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]%>
+<% i = days.index(start_day)%>
+
+<%j = 0%>
+<tr class="days">
+  <% while j < i%>
+    <td class="day other-month">
+    </td>
+    <% j += 1%>
+  <%end%>
