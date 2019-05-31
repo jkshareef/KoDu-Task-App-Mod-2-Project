@@ -21,6 +21,7 @@
    max-width: 1236px;
    margin-left: auto;
    margin-right: auto;
+   font-family: 'Oxygen', sans-serif;
  }
 
  .wrapper-no-overflow {
@@ -41,6 +42,7 @@
 
  .wrapper__body {
    padding-top: 80px;
+   font-family: 'Oxygen', sans-serif;
  }
 
  .wrapper__body--item {
@@ -376,10 +378,11 @@
  }
 
  /*delete button in show for task*/
- #delete_button form input[type="submit"] {
+ #delete_button input[type="submit"]{
    color: red;
    border: none;
    padding: 16px 0;
    font-size: normal;
+   background: none;
  }
  /*for navbar*/
