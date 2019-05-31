@@ -56,6 +56,10 @@ class User < ApplicationRecord
     count / 3
   end
 
+  def friend_list
+    @friends = friends
+  end
+
 
 
 end

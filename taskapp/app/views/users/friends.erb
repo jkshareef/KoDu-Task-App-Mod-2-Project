@@ -1,0 +1,17 @@
+<%= render '/layouts/header' %>
+<div class="wrapper">
+  <div class="wrapper__body">
+
+
+    <% @friends.each do |friend| %>
+
+    <div class="feed">
+      <div class="feed__photo">
+        <%= image_tag(Faker::Avatar.image) %>
+      </div>
+      <h3><%= link_to friend.display_name, friend %></h3>
+      <h3><%= link_to "@#{friend.user_name}", friend%><br></h3>
+    </div>
+    <% end %>
+  </div>
+</div>

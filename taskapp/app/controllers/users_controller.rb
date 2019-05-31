@@ -34,9 +34,9 @@ class UsersController < ApplicationController
   end
 
   def friend_list
-    @relationships = self.relationships
+    @friends = current_user.friend_list
 
-    redirect_to :index
+    render :friends
   end
 
 

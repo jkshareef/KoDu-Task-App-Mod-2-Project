@@ -12,16 +12,27 @@
   <% end %>
 
 </div>
+<div class="wrapper__body">
+  <% if @users != nil %>
+
+    <% @users.each do |user| %>
+    <div class="wrapper__body--item">
+
+      <div class="row">
+
+        <div class="col-6 col-md-4">
+          <div class="feed">
+            <div class="feed__photo">
+              <%= image_tag(Faker::Avatar.image) %>
+            </div>
+            <h4><%= link_to user.display_name, user %></h4><br>
+            <h4><%= link_to "@#{user.user_name}", user%></h4>
+          </div>
+        </div>
+      </div>
 
 
-
-<% if @users != nil %>
-  <div id="results">
-  <% @users.each do |user| %>
-  <div class="wrapper wrapper__body--item large-hero--list">
-    <h2><%= link_to user.display_name, user %></h2><br>
-    <h4><%= link_to user.user_name, user %></h4>
-  </div>
+    </div>
+      <% end %>
     <% end %>
-  </div>
-  <% end %>
+</div>
