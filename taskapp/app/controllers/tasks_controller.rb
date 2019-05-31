@@ -34,6 +34,11 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to @task
     else
+      flash[:errors] = @task.errors.full_messages
+      flash[:task_attributes] = @task.attributes
+
+      @error_message = flash[:errors].join('---')
+
       render :new
     end
 
@@ -50,6 +55,10 @@ class TasksController < ApplicationController
       @task.user = current_user
       redirect_to @task
     else
+      flash[:errors] = @task.errors.full_messages
+      flash[:task_attributes] = @task.attributes
+
+      @error_message = flash[:errors].join('---')
       render :edit
     end
 
