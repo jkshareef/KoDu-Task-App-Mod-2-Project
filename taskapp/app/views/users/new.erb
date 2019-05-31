@@ -3,8 +3,15 @@
 
 
 
+
+
 <div class="wrapper-no-overflow large-hero--text-content-create">
 
+  <% if @error_message %>
+  <div class="error-message">
+    <p><%= @error_message %></p>
+  </div>
+<% end %>
     <%= form_for(@user, url: signup_path) do |f| %>
 
       <div class="btn_custom-login">

@@ -234,6 +234,16 @@
    color: #FFF;
  }
 
+ .field_with_errors {
+   color: red;
+   display: inline-block;
+   margin-top: 40px;
+ }
+
+ .error-message {
+   margin-bottom: 100px;
+ }
+
  body {
  	font-family: 'Noto Serif JP', serif;
  }
