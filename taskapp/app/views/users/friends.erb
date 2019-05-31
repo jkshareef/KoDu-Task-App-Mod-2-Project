@@ -3,14 +3,15 @@
   <div class="wrapper__body">
 
 
-    <%= @friends.each do |friend| %>
+    <% @friends.each do |friend| %>
 
     <div class="feed">
       <div class="feed__photo">
         <%= image_tag(Faker::Avatar.image) %>
       </div>
-      <h3><%= friend.display_name %></h3>
-      <h3><%= "@#{friend.user_name}"%><br></h3>
+      <h3><%= link_to friend.display_name, friend %></h3>
+      <h3><%= link_to "@#{friend.user_name}", friend%><br></h3>
     </div>
+    <% end %>
   </div>
 </div>
