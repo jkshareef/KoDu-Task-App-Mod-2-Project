@@ -186,6 +186,48 @@
     border: 6px solid rgba(47, 85, 114, 0.8);
   }
 
+  .photo-avatar {
+    border-radius: 80px;
+    overflow: hidden;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto -80px auto;
+    position: relative;
+    left: -150px;
+    border: 6px solid rgba(47, 85, 114, 0.8);
+  }
+
+  .row {
+    margin-bottom: 150px;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .row--gutters > div {
+    padding-right: 65px;
+  }
+
+  .row__4 {
+    float: left;
+    width: 33.33%;
+  }
+
+  .row__6 {
+    float: left;
+    width: 50%;
+  }
+
+
+
+  .row__8 {
+    float: left;
+    width: 66.66%;
+  }
+
   .search__result {
     max-width: 50%;
   }
@@ -256,6 +298,11 @@
  img {
    max-width: 100%;
    height: auto;
+ }
+
+
+ * {
+   box-sizing: border-box;
  }
 
 

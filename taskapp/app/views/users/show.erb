@@ -1,75 +1,101 @@
 <%= render "/layouts/header" %>
+<% image_array = ["cat-hi-dpi.jpg", "jane-hi-dpi.jpg", "john-hi-dpi.jpg", Faker::Avatar.image]%>
 
 
 <% if current_user == @user %>
   <div class="wrapper">
     <div class="wrapper__body">
-    <h2><%= @user.display_name %></h2>
-    <h3 class="btn_custom-drop-task wrapper__body--item "><a href="/tasks">My<span class="logo-small">Kodu</span></a></h3>
+      <div class="row">
+        <div class="row__8">
+          <h2 class="section-title-main"><%= @user.display_name %></h2>
+        </div>
+        <div class="row__4">
+          <%= image_tag(image_array.sample, class: "photo-avatar") %>
+        </div>
+      </div>
+      </div>
+
+
+
+
+    <h2></h2>
 
       <div class="wrapper__body--item">
-        <h4>Top Tasks</h4>
-      </div>
-      <!--<div class="row">-->
-        <div class="grid-container">
-        <!--<div class="col py-3 px-lg-5 border bg-light top-task">-->
-        <div class="grid-item">
-          <% if @user.top_tasks[0] != nil %>
-            <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
-            <h6><%=@user.top_tasks[0].date%></h6>
+        <div class="row--gutters">
+          <div class="row__6">
+            <h2 class="btn_custom-drop-task wrapper__body--item "><a href="/tasks">My<span class="logo-small">Kodu</span></a></h2>
 
-            <h6><%=@user.top_tasks[0].start_time%> to <%=@user.top_tasks[0].end_time%></h6>
+              <h4>Top Tasks</h4>
+              <div class="grid-container">
 
-            <% end %>
-        </div>
-        <!--<div class="col py-3 px-lg-5 border bg-light top-task">-->
-        <div class="grid-item">
-          <% if @user.top_tasks[1] != nil %>
-          <h3 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
-          <h6><%=@user.top_tasks[1].date%></h6>
-          <h6><%=@user.top_tasks[1].start_time%> to <%=@user.top_tasks[1].end_time%></h6>
-          <% end %>
-        </div>
-        <!--<div class="col py-3 px-lg-5 border bg-light top-task">-->
-        <div class="grid-item">
-          <% if @user.top_tasks[2] != nil %>
-          <h3 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h3>
-          <h6><%=@user.top_tasks[2].date%></h6>
-          <h6><%=@user.top_tasks[2].start_time%> to <%=@user.top_tasks[2].end_time%></h6>
-          <% end %>
-        </div>
-      </div>
+              <div class="grid-item">
+                <% if @user.top_tasks[0] != nil %>
+                  <h6 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h6>
+                  <h6><%=@user.top_tasks[0].date%></h6>
 
-      <div class="wrapper__body">
+                  <h6><%=@user.top_tasks[0].start_time%> to <%=@user.top_tasks[0].end_time%></h6>
 
-
-              <h2 class="section-title"><%= image_tag("comment.svg", class: "section-title_icon" )%><strong>The Feed</strong></h2><br>
-
-
-
-              <% @user.friend_feed.each do |task_list| %>
-
-                <% if task_list.empty? %>
-                  <% next %>
-                <% end %>
-              <% image_array = ["cat-hi-dpi.jpg", "jane-hi-dpi.jpg", "john-hi-dpi.jpg", Faker::Avatar.image]%>
-                <div class="wrapper__small">
-                  <% task_list.each do |task| %>
-
-
-                      <div class="feed">
-                        <div class="feed__photo">
-                          <%= link_to image_tag(image_array.sample), task.user %>
-
-                        </div>
-                        <h4><%= link_to task.description, task %></h4>
-                        <h4><%= "Start Date: #{task.date}" %><br></h4>
-                        <h4><%= "By: #{task.user.display_name}" %></h4>
-                      </div>
                   <% end %>
-                </div>
+              </div>
+
+              <div class="grid-item">
+                <% if @user.top_tasks[1] != nil %>
+                <h6 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h6>
+                <h6><%=@user.top_tasks[1].date%></h6>
+                <h6><%=@user.top_tasks[1].start_time%> to <%=@user.top_tasks[1].end_time%></h6>
                 <% end %>
+              </div>
+
+              <div class="grid-item">
+                <% if @user.top_tasks[2] != nil %>
+                <h6 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h6>
+                <h6><%=@user.top_tasks[2].date%></h6>
+                <h6><%=@user.top_tasks[2].start_time%> to <%=@user.top_tasks[2].end_time%></h6>
+                <% end %>
+              </div>
             </div>
+
+          </div>
+
+          <div class="row__6">
+            <h2 class="section-title"><%= image_tag("comment.svg", class: "section-title_icon" )%><strong>The Feed</strong></h2><br>
+
+
+
+            <% @user.friend_feed.each do |task_list| %>
+
+              <% if task_list.empty? %>
+                <% next %>
+              <% end %>
+
+
+                <% task_list.each do |task| %>
+
+
+                    <div class="feed">
+                      <div class="feed__photo">
+                        <%= link_to image_tag(image_array.sample), task.user %>
+
+                      </div>
+                      <h4><%= link_to task.description, task %></h4>
+                      <h4><%= "Start Date: #{task.date}" %><br></h4>
+                      <h4><%= "By: #{task.user.display_name}" %></h4>
+                    </div>
+                <% end %>
+
+              <% end %>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
     </div>
   </div>
 
@@ -82,38 +108,57 @@
         <div class="wrapper">
 
                   <div class="wrapper__body">
-                      <h2 class="section-title-main"><%= @user.display_name %>
-                      </h2>
 
-                    <div class="wrapper__body--item">
-                      <h4>Top Tasks</h4>
-                    </div>
+
                     <div class="row">
-                      <div class="col py-3 px-lg-5 border bg-light top-task">
-                        <% if @user.top_tasks[0] != nil %>
-                          <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
-                          <h6><%=@user.top_tasks[0].date%></h6>
-                          <h6><%=@user.top_tasks[0].start_time%></h6>
-                          <h6><%=@user.top_tasks[0].end_time%></h6>
-                          <% end %>
+                      <div class="row__8">
+                        <h2 class="section-title-main"><%= @user.display_name %></h2>
                       </div>
-                      <div class="col py-3 px-lg-5 border bg-light top-task">
-                        <% if @user.top_tasks[1] != nil %>
-                        <h3 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
-                        <h6><%=@user.top_tasks[1].date%></h6>
-                        <h6><%=@user.top_tasks[1].start_time%></h6>
-                        <h6><%=@user.top_tasks[1].end_time%></h6>
-                        <% end %>
-                      </div>
-                      <div class="col py-3 px-lg-5 border bg-light top-task">
-                        <% if @user.top_tasks[2] != nil %>
-                        <h3 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h3>
-                        <h6><%=@user.top_tasks[2].date%></h6>
-                        <h6><%=@user.top_tasks[2].start_time%></h6>
-                        <h6><%=@user.top_tasks[2].end_time%></h6>
-                        <% end %>
+                      <div class="row__4">
+                        <%=image_tag(image_array.sample, class: "photo-avatar")%>
                       </div>
                     </div>
+
+
+                      <div class="row row--gutters">
+                        <div class="row__4">
+                          <h2 class="btn_custom-drop-task wrapper__body--item "><a href="/tasks">All<span class="logo-small">Kodu</span></a></h2>
+                        </div>
+                        <div class="row__8">
+                          <h4>Top Tasks</h4>
+
+                        <div class="grid-container">
+
+                        <div class="grid-item">
+                          <% if @user.top_tasks[0] != nil %>
+                            <h6 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h6>
+                            <h6><%=@user.top_tasks[0].date%></h6>
+
+                            <h6><%=@user.top_tasks[0].start_time%> to <%=@user.top_tasks[0].end_time%></h6>
+
+                            <% end %>
+                        </div>
+
+                        <div class="grid-item">
+                          <% if @user.top_tasks[1] != nil %>
+                          <h6 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h6>
+                          <h6><%=@user.top_tasks[1].date%></h6>
+                          <h6><%=@user.top_tasks[1].start_time%> to <%=@user.top_tasks[1].end_time%></h6>
+                          <% end %>
+                        </div>
+                        <!--<div class="col py-3 px-lg-5 border bg-light top-task">-->
+                        <div class="grid-item">
+                          <% if @user.top_tasks[2] != nil %>
+                          <h6 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h6>
+                          <h6><%=@user.top_tasks[2].date%></h6>
+                          <h6><%=@user.top_tasks[2].start_time%> to <%=@user.top_tasks[2].end_time%></h6>
+                          <% end %>
+                        </div>
+                      </div>
+                        </div>
+                      </div>
+
+
                     </div>
         </div>
 
@@ -122,48 +167,65 @@
 <% else %>
         <div class="wrapper">
 
-                    <div class="wrapper__body">
-                      <div class="">
-                        <h2 class="section-title-main"><%= @user.display_name %>
-                        </h2>
-                        <span class="btn_custom_small">
-                          <%= form_tag("/requests", method: "post") do %>
-                          <%= hidden_field_tag(:id, @user.id) %>
-                          <%= submit_tag("Add Friend") %>
-                          <% end %>
-                        </span>
-                      </div>
+            <div class="wrapper__body">
 
-                      <div class="wrapper__body--item">
-                        <h4>Top Tasks</h4>
-                      </div>
-                      <div class="row">
-                        <div class="col py-3 px-lg-5 border bg-light top-task">
-                          <% if @user.top_tasks[0] != nil %>
-                            <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
-                            <h6><%=@user.top_tasks[0].date%></h6>
-                            <h6><%=@user.top_tasks[0].start_time%></h6>
-                            <h6><%=@user.top_tasks[0].end_time%></h6>
-                            <% end %>
-                        </div>
-                        <div class="col py-3 px-lg-5 border bg-light top-task">
-                          <% if @user.top_tasks[1] != nil %>
-                          <h3 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
-                          <h6><%=@user.top_tasks[1].date%></h6>
-                          <h6><%=@user.top_tasks[1].start_time%></h6>
-                          <h6><%=@user.top_tasks[1].end_time%></h6>
-                          <% end %>
-                        </div>
-                        <div class="col py-3 px-lg-5 border bg-light top-task">
-                          <% if @user.top_tasks[2] != nil %>
-                          <h3 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h3>
-                          <h6><%=@user.top_tasks[2].date%></h6>
-                          <h6><%=@user.top_tasks[2].start_time%></h6>
-                          <h6><%=@user.top_tasks[2].end_time%></h6>
-                          <% end %>
-                        </div>
-                      </div>
-                      </div>
+
+              <div class="row">
+                <div class="row__8">
+                  <h2 class="section-title-main"><%= @user.display_name %>
+                  </h2>
+                </div>
+                <div class="row__4">
+                  <%=image_tag(image_array.sample, class: "photo-avatar")%>
+                </div>
+              </div>
+
+
+                <span class="btn_custom_small">
+                  <%= form_tag("/requests", method: "post") do %>
+                  <%= hidden_field_tag(:id, @user.id) %>
+                  <%= submit_tag("Add Friend") %>
+                  <% end %>
+                </span>
+
+
+
+              <div class="wrapper__small">
+
+                  <div class="wrapper__body--item">
+                    <h4>Top Tasks</h4>
+                  </div>
+                  <div class="grid-container">
+
+                  <div class="grid-item">
+                    <% if @user.top_tasks[0] != nil %>
+                      <h6 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h6>
+                      <h6><%=@user.top_tasks[0].date%></h6>
+
+                      <h6><%=@user.top_tasks[0].start_time%> to <%=@user.top_tasks[0].end_time%></h6>
+
+                      <% end %>
+                  </div>
+
+                  <div class="grid-item">
+                    <% if @user.top_tasks[1] != nil %>
+                    <h6 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h6>
+                    <h6><%=@user.top_tasks[1].date%></h6>
+                    <h6><%=@user.top_tasks[1].start_time%> to <%=@user.top_tasks[1].end_time%></h6>
+                    <% end %>
+                  </div>
+
+                  <div class="grid-item">
+                    <% if @user.top_tasks[2] != nil %>
+                    <h6 class="urgent"><%=link_to @user.top_tasks[2].description, @user.top_tasks[2]%></h6>
+                    <h6><%=@user.top_tasks[2].date%></h6>
+                    <h6><%=@user.top_tasks[2].start_time%> to <%=@user.top_tasks[2].end_time%></h6>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+              </div>
         </div>
 
 
