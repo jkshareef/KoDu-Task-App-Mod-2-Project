@@ -1,0 +1,29 @@
+<div class="wrapper-for-calendar-profile">
+
+<table id="calendar-user">
+  <caption><%= Date::MONTHNAMES[Time.now.month]%> 2019</caption>
+  <tr class="weekdays">
+    <th scope="col">Sun</th>
+    <th scope="col">Mon</th>
+    <th scope="col">Tues</th>
+    <th scope="col">Wed</th>
+    <th scope="col">Thurs</th>
+    <th scope="col">Fri</th>
+    <th scope="col">Sat</th>
+  </tr>
+
+  <%= render "layouts/days_other_month_for_profile"%>
+  <%k = 1%>
+    <% while k < Date.new(2019, Date::MONTHNAMES.index(Date::MONTHNAMES[Time.now.month]), -1).day + 1%>
+    <td class="day">
+      <div class="date"><%= k%></div>
+
+
+    </td>
+
+    <%k += 1%>
+  <%end%>
+</tr>
+
+</table>
+</div>
