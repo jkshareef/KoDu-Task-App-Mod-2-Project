@@ -5,3 +5,22 @@
 .wrapper h3 a {
   color: #7549F0;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #FAFAFA;
+  padding: 5px;
+}
+.grid-item {
+  /*background-color: rgb(195, 204, 212);*/
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.grid-container .urgent a {
+  color: #E1126C;
+  text-decoration: none;
+}
