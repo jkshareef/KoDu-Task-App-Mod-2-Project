@@ -19,8 +19,9 @@
   <%k = 1%>
     <% while k < Date.new(2019, Date::MONTHNAMES.index(@month), -1).day + 1%>
     <td class="day">
-      <div class="date"><%= k%></div>
+      <div class="date"><%= link_to k, tasks_path(month: @month)%></div>
         <%count = 0%>
+
       <% @tasks.each do |task|%>
 
         <% if task.day == k%>
@@ -29,7 +30,7 @@
     <%end%>
       <% if count > 0 %>
         <div class="event">
-          <%= link_to count, tasks_path(month: @month)%>
+          <%= count%>
         </div>
       <%end%>
     </td>
