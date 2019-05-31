@@ -1,58 +1,59 @@
 <%= render "layouts/header"%>
+<div class="wrapper">
 
+  <h1 id="my_task"><%=current_user.display_name%>'s Tasks</h1>
 
+  <div id="months_buttons">
+  <%= render "layouts/months"%>
+  </div>
 
-<h1 id="my_task"><%=current_user.display_name%>'s Tasks</h1>
+  <table id="calendar">
+    <caption><%= @month%> 2019</caption>
+    <tr class="weekdays">
+      <th scope="col">Sunday</th>
+      <th scope="col">Monday</th>
+      <th scope="col">Tuesday</th>
+      <th scope="col">Wednesday</th>
+      <th scope="col">Thursday</th>
+      <th scope="col">Friday</th>
+      <th scope="col">Saturday</th>
+    </tr>
 
-<div id="months_buttons">
-<%= render "layouts/months"%>
-</div>
+    <%= render "layouts/days_other_month"%>
+    <%k = 1%>
+      <% while k < Date.new(2019, Date::MONTHNAMES.index(@month), -1).day + 1%>
+      <td class="day">
+        <div class="date"><%= k%></div>
+        <div class="add_button">
+          <%= link_to "+", new_task_path(target_date: "2019-#{Date::MONTHNAMES.index(@month)}-#{k}")%>
+        </div>
+          <% @tasks.each do |task|%>
 
-<table id="calendar">
-  <caption><%= @month%> 2019</caption>
-  <tr class="weekdays">
-    <th scope="col">Sunday</th>
-    <th scope="col">Monday</th>
-    <th scope="col">Tuesday</th>
-    <th scope="col">Wednesday</th>
-    <th scope="col">Thursday</th>
-    <th scope="col">Friday</th>
-    <th scope="col">Saturday</th>
-  </tr>
-
-  <%= render "layouts/days_other_month"%>
-  <%k = 1%>
-    <% while k < Date.new(2019, Date::MONTHNAMES.index(@month), -1).day + 1%>
-    <td class="day">
-      <div class="date"><%= k%></div>
-      <div class="add_button">
-        <%= link_to "+", new_task_path(target_date: "2019-#{Date::MONTHNAMES.index(@month)}-#{k}")%>
-      </div>
-        <% @tasks.each do |task|%>
-
-          <% if task.day == k%>
-            <div class="event">
-            <%if task.urgent%>
-              <div class="event-desc urgent">
-                <%= link_to task.description, task%>
-              </div>
-            <%else%>
-              <div class="event-desc">
-                <%= link_to task.description, task%>
-              </div>
-            <%end%>
-              <div class="event-time">
-                <%= task.duration%>
+            <% if task.day == k%>
+              <div class="event">
+              <%if task.urgent%>
+                <div class="event-desc urgent">
+                  <%= link_to task.description, task%>
+                </div>
+              <%else%>
+                <div class="event-desc">
+                  <%= link_to task.description, task%>
+                </div>
+              <%end%>
+                <div class="event-time">
+                  <%= task.duration%>
+                </div>
               </div>
             </div>
-          </div>
+          <%end%>
         <%end%>
-      <%end%>
 
-    </td>
+      </td>
 
-    <%k += 1%>
-  <%end%>
-</tr>
+      <%k += 1%>
+    <%end%>
+  </tr>
 
-</table>
+  </table>
+
+</div>

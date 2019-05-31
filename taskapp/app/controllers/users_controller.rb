@@ -22,16 +22,12 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Task App!"
       redirect_to @user
     else
-
       flash[:errors] = @user.errors.full_messages
       flash[:user_attributes] = @user.attributes
 
-      render(
-        html: <%="<script>alert(#{flash[:errors].join('-----')})</script>"%>.html_safe,
-        action: :new
-      )
+        render :new
+      end
     end
-  end
 
 
 
