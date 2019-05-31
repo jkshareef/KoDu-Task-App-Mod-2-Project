@@ -83,8 +83,21 @@
 
  }
 
+ .all-task-logo {
+   position: relative;
+   left: 100px;
+ }
+
+
+ .top-task-logo {
+   position: relative;
+   left: 220px;
+   margin-top: 40px;
+ }
+
  .logo-small {
    font-family: 'Lobster', cursive;
+   color: #7549F0;
  }
 
  .large-hero--text-content-search {
@@ -222,10 +235,14 @@
   }
 
 
-
   .row__8 {
     float: left;
     width: 66.66%;
+  }
+
+  .row__centered {
+    position: relative;
+    left: 120px;
   }
 
   .search__result {
