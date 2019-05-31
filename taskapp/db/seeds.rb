@@ -26,8 +26,8 @@ Image_Array = ["cat-hi-dpi.jpg", "jane-hi-dpi.jpg", "john-hi-dpi.jpg", Faker::Av
 end
 
 200.times do
-  user_1 = User.find(rand(1..50))
-  user_2 = User.find(rand(51..100))
+  user_1 = User.find(rand(1..9))
+  user_2 = User.find(rand(9..20))
   Relationship.create_reciprocal_for_ids(user_1.id, user_2.id)
 end
 

@@ -1,12 +1,13 @@
 <%= render "layouts/header"%>
 <div class="wrapper__body">
+<div class="form-style-9">
 <h1>Create Task</h1>
 
 <%= form_for @task do |f|%>
   <%= f.label :description %>
-  <%= f.text_field :description %><br>
+  <%= f.text_field :description%><br>
   <%= f.label :date , "Start Date (YYYY-MM-DD)"%>
-  <%= f.text_field :date %><br>
+  <%= f.text_field :date%><br>
   <%= f.label :start_time, "Start Time (am/pm)" %>
   <%= f.text_field :start_time%><br>
   <%= f.label :end_time, "End Time (am/pm)"%>
@@ -15,4 +16,5 @@
   <%= f.check_box :urgent %><br>
   <%= f.submit %>
 <%end%>
+</div>
 </div>

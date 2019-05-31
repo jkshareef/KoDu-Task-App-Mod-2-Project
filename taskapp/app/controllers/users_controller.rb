@@ -24,15 +24,23 @@ class UsersController < ApplicationController
     else
       flash[:errors] = @user.errors.full_messages
       flash[:user_attributes] = @user.attributes
+
+      @error_message = flash[:errors].join('---')
+
+      render :new
     end
   end
 
 
 
   def search
+    if params[:q].empty?
+      render :index
+    else
     @users = User.all.select {|user| user.user_name.include?(params[:q])}
 
     render :index
+    end
   end
 
   def friend_list

@@ -21,6 +21,7 @@
    max-width: 1236px;
    margin-left: auto;
    margin-right: auto;
+   font-family: 'Oxygen', sans-serif;
  }
 
  .wrapper-no-overflow {
@@ -41,6 +42,7 @@
 
  .wrapper__body {
    padding-top: 80px;
+   font-family: 'Oxygen', sans-serif;
  }
 
  .wrapper__body--item {
@@ -237,6 +239,16 @@
    color: #FFF;
  }
 
+ .field_with_errors {
+   color: red;
+   display: inline-block;
+   margin-top: 40px;
+ }
+
+ .error-message {
+   margin-bottom: 100px;
+ }
+
  body {
  	font-family: 'Noto Serif JP', serif;
  }
@@ -379,10 +391,11 @@
  }
 
  /*delete button in show for task*/
- #delete_button form input[type="submit"] {
+ #delete_button input[type="submit"]{
    color: red;
    border: none;
    padding: 16px 0;
    font-size: normal;
+   background: none;
  }
  /*for navbar*/
