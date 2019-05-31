@@ -10,16 +10,14 @@
 
             <li class="primary-nav__li"><%= link_to "Log out", logout_path%></li>
             <li class="primary-nav__li"><%= link_to "Settings", '#'%></li>
-          </ul>
-            <div class="primary-nav__li dropdown">
-              <button class="btn  btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Friends</button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <%= link_to "Friend List", friends_path, class: "dropdown-item"  %>
-                <%= link_to "Received Requests", received_path, class: "dropdown-item"%>
-                <%= link_to "Sent Requests", sent_path, class: "dropdown-item"%>
+            <li class="primary-nav__li dropdown">
+              <a href="javascript:void(0)" class="dropbtn">Friends</a>
+              <div class="dropdown-content">
+                <%= link_to "Friend List", friends_path%>
+                <%= link_to "Received Requests", received_path%>
+                <%= link_to "Sent Requests", sent_path%>
               </div>
-            </div>
-            <ul class="primary-nav__ul">
+            </li>
               <li class="primary-nav__li"><%= link_to "Profile", current_user%></li>
             </ul>
         <% else %>
