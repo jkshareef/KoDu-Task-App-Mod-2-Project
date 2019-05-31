@@ -179,6 +179,11 @@
     margin-bottom: .6rem;
   }
 
+  .section-title_icon-feed {
+    top: 100px;
+    position: relative;
+  }
+
   .top-task {
     background-color: rgba(47, 85, 114, 0.7);
     padding: 0 18px 1px 18px;
@@ -216,7 +221,7 @@
   }
 
   .row {
-    margin-bottom: 150px;
+    margin-bottom: 40px;
   }
 
   .row::after {
