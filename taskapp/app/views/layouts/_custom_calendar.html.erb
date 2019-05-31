@@ -1,5 +1,8 @@
 <div class="wrapper-for-calendar-profile">
 
+  <div id="months-buttons-custom-view">
+  <%= render "layouts/months_customs"%>
+  </div>
 <table id="calendar-user">
   <caption><%= @month%> 2019</caption>
   <tr class="weekdays">
@@ -16,8 +19,9 @@
   <%k = 1%>
     <% while k < Date.new(2019, Date::MONTHNAMES.index(@month), -1).day + 1%>
     <td class="day">
-      <div class="date"><%= k%></div>
+      <div class="date"><%= link_to k, tasks_path(month: @month)%></div>
         <%count = 0%>
+
       <% @tasks.each do |task|%>
 
         <% if task.day == k%>
