@@ -1,13 +1,17 @@
 class TasksController < ApplicationController
 
   def index
-    @month = nil
-    if params[:month] == nil
-      @month = Date::MONTHNAMES[Time.now.month]
+    if logged_in?
+      @month = nil
+      if params[:month] == nil
+        @month = Date::MONTHNAMES[Time.now.month]
+      else
+        @month = params[:month]
+      end
+      @tasks = current_user.tasks.select {|task| task.month_name == @month}
     else
-      @month = params[:month]
+      redirect_to login_path
     end
-    @tasks = current_user.tasks.select {|task| task.month_name == @month}
   end
 
   def show
