@@ -15,12 +15,12 @@
 <% @task.comments.each do |comment|%>
   <div class="comment">
     <p><%=comment.content%></p>
-    <p><%=comment.commenter%> - <%=comment.time_created%></p>
+    <p><%=comment.commenter%> - <%=comment.time_passed%></p>
   </div>
 <%end%>
 <br>
 <%= form_for @task.comments.build do |f| %>
-  <p>Add a Comment: </p>
+  <p>Add a Comment </p>
   <%= f.hidden_field :task_id%>
   <%= f.text_area :content%><br>
   <%= f.submit "Enter", :class => "enter_comment"%>
