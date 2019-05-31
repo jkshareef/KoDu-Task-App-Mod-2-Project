@@ -8,7 +8,7 @@ class Comment < ApplicationRecord
   end
 
   def time_created
-    self.created_at.strftime("%b-%d-%Y, at %I:%M%p")
+    Time.now.strftime("%b %d %Y, at %I:%M%p")
   end
 
   def time_passed

@@ -1,5 +1,6 @@
 <%= render "layouts/header"%>
 <div class="wrapper__body">
+<div class="form-style-9">
 <h2><%= @task.description.split[0]%>...</h2>
 <%if @task.urgent%>
   <p style="color: red">Urgent!!</p>
@@ -14,20 +15,21 @@
 <% @task.comments.each do |comment|%>
   <div class="comment">
     <p><%=comment.content%></p>
-    <p><%=comment.commenter%> - <%=comment.time_passed%></p>
+    <p><%=comment.commenter%> - <%=comment.time_created%></p>
   </div>
 <%end%>
 <br>
 <%= form_for @task.comments.build do |f| %>
   <p>Add a Comment: </p>
   <%= f.hidden_field :task_id%>
-  <%= f.text_area :content%>
-  <%= f.submit "Enter"%>
+  <%= f.text_area :content%><br>
+  <%= f.submit "Enter", :class => "enter_comment"%>
 <% end %>
 
 <div id="delete_button">
   <%= form_tag @task, method: "delete" do %>
-    <%= submit_tag "Delete Task" %>
+    <%= submit_tag "Delete Task", :id => "delete_task"%>
     <% end %>
+</div>
 </div>
 </div>
