@@ -17,19 +17,21 @@
 
     <% @users.each do |user| %>
     <div class="wrapper__body--item">
+        <div class="wrapper__small">
+          <div class="row">
 
-      <div class="row">
-
-        <div class="col-6 col-md-4">
-          <div class="feed">
-            <div class="feed__photo">
-              <%= image_tag(Faker::Avatar.image) %>
+            <div class="col-6 col-md-4">
+              <div class="feed">
+                <div class="feed__photo">
+                  <%= image_tag(Faker::Avatar.image) %>
+                </div>
+                <h4><%= link_to user.display_name, user %></h4><br>
+                <h4><%= link_to "@#{user.user_name}", user%></h4>
+              </div>
             </div>
-            <h4><%= link_to user.display_name, user %></h4><br>
-            <h4><%= link_to "@#{user.user_name}", user%></h4>
           </div>
         </div>
-      </div>
+
 
 
     </div>

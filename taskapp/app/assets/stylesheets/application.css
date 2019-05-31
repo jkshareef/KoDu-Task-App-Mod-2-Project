@@ -23,6 +23,14 @@
    margin-right: auto;
  }
 
+ .wrapper-no-overflow {
+   padding-left: 18px;
+   padding-right: 18px;
+   max-width: 1236px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
  .wrapper__small {
    padding-left: 18px;
    padding-right: 18px;
@@ -95,7 +103,7 @@
    position: absolute;
    top: 50%;
    transform: translateY(-150%);
-   left: 100px;
+   left: 50px;
    width: 100%;
    text-align: center;
  }

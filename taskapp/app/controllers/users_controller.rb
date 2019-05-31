@@ -24,10 +24,8 @@ class UsersController < ApplicationController
     else
       flash[:errors] = @user.errors.full_messages
       flash[:user_attributes] = @user.attributes
-
-        render :new
-      end
     end
+  end
 
 
 

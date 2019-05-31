@@ -3,7 +3,7 @@
 
 
 
-<div class="wrapper large-hero--text-content-create">
+<div class="wrapper-no-overflow large-hero--text-content-create">
 
     <%= form_for(@user, url: signup_path) do |f| %>
 
@@ -22,16 +22,17 @@
       <div class="wrapper large-hero--text-content-lower">
 
 
-      <div class="btn_custom-login">
-          <%= f.label :password %>
-      </div>
-      <%= f.password_field :password%>
+        <div class="btn_custom-login">
+            <%= f.label :password %>
+        </div>
+        <%= f.password_field :password%>
 
-      <div class="btn_custom-login">
-        <%= f.label :password_confirmation, "Confirmation" %>
-      </div>
-      <%= f.password_field :password_confirmation%>
+        <div class="btn_custom-login">
+          <%= f.label :password_confirmation, "Confirmation" %>
+        </div>
+        <%= f.password_field :password_confirmation%>
       </div>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
+  </div>
