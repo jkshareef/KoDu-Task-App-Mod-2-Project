@@ -90,8 +90,8 @@
 
 #calendar-user .date {
  text-align: center;
- margin-bottom: 5px;
- padding: 4px;
+ /*margin-bottom: 1px;*/
+ padding: 0px;
  /*background: #333;*/
  color: #333;
  width: 20px;
@@ -103,11 +103,10 @@
 
 #calendar-user .event {
   flex: 0 0 auto;
- font-size: 2px;
- border-radius: 1px;
- padding: 5px;
- margin-bottom: 5px;
- line-height: 14px;
+ font-size: 20px;
+ border-radius: 3px;
+ padding-left: 9px;
+ line-height: 15px;
  background: #e4f2f2;
  border: 1px solid #b5dbdc;
  color: #009aaf;
