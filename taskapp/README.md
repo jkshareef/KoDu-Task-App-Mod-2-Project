@@ -5,7 +5,7 @@
 
 ## Minimum Program Requirements
 
-macOS:
+
 
 - [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
 
