@@ -18,7 +18,7 @@
 
 
 
-    <h2></h2>
+
 
       <div class="wrapper__body--item">
         <div class="row--gutters">
@@ -32,7 +32,7 @@
 
 
 
-            <div class="row_-centered">
+            <div class="row__centered-top">
               <h2 class="top-task-logo">Top<span class="logo-small">Kodu</span></h2>
               <div class="grid-container">
 
@@ -131,15 +131,21 @@
                     </div>
 
 
-                      <div class="row row--gutters">
+                      <div class="row--gutters">
                         <div class="row__4">
-                          <h2><a href="/tasks">All<span class="logo-small">Kodu</span></a></h2>
                           <div class="">
-                            <a href="/tasks"><%= render '/layouts/custom_calendar' %></a>
+                            <h2 class="all-task-logo"><a href="/tasks">All<span class="logo-small">Kodu</span></a></h2>
+                          </div>
+
+                          <div class="">
+                            <a href="/tasks"><%=render '/layouts/custom_calendar'%></a>
                           </div>
                         </div>
                         <div class="row__8">
-                          <h4>Top <<span class="logo-small">Kodu</span></h4>
+                          <div class="row__centered-top-friend">
+                            <h2>Top <span class="logo-small">Kodu</span></h2>
+                          </div>
+
 
                         <div class="grid-container">
 

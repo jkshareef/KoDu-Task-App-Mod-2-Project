@@ -242,7 +242,17 @@
 
   .row__centered {
     position: relative;
-    left: 120px;
+    left: 150px;
+  }
+
+  .row__centered-top {
+    position: relative;
+    left: 20px;
+  }
+
+  .row__centered-top-friend {
+    position: relative;
+    text-align: center;
   }
 
   .search__result {
