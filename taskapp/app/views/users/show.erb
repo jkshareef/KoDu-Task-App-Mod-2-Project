@@ -1,7 +1,5 @@
 <%= render "/layouts/header" %>
 
-
-<% byebug %>
 <% if current_user == @user %>
   <div class="wrapper">
     <div class="wrapper__body">
@@ -15,14 +13,14 @@
         <div class="col py-3 px-lg-5 border bg-light top-task">
           <% if @user.top_tasks[0] != nil %>
             <h3 class="urgent"><%=link_to @user.top_tasks[0].description, @user.top_tasks[0]%></h3>
-            <h6><%=@user.top_tasks[0].date%></h3>
-            <h6><%=@user.top_tasks[0].start_time%></h3>
-            <h6><%=@user.top_tasks[0].end_time%></h3>
+            <h6><%=@user.top_tasks[0].date%></h6>
+            <h6><%=@user.top_tasks[0].start_time%></h6>
+            <h6><%=@user.top_tasks[0].end_time%></h6>
             <% end %>
         </div>
         <div class="col py-3 px-lg-5 border bg-light top-task">
           <% if @user.top_tasks[1] != nil %>
-          <ph3class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
+          <h3 class="urgent"><%=link_to @user.top_tasks[1].description, @user.top_tasks[1]%></h3>
           <h6><%=@user.top_tasks[1].date%></h6>
           <h6><%=@user.top_tasks[1].start_time%></h6>
           <h6><%=@user.top_tasks[1].end_time%></h6>
@@ -66,13 +64,17 @@
                       </div>
                   <% end %>
                 </div>
+                <% end %>
             </div>
     </div>
   </div>
-  <% end %>
 
 
-<% if current_user.friend_list.include?(@user) %>
+
+
+
+<% elsif current_user.friend_list.include?(@user) %>
+
         <div class="wrapper">
 
                   <div class="wrapper__body">
@@ -110,7 +112,7 @@
                     </div>
                     </div>
         </div>
-<% end %>
+
 
 
 <% else %>
