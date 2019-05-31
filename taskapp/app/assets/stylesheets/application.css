@@ -81,6 +81,10 @@
 
  }
 
+ .logo-small {
+   font-family: 'Lobster', cursive;
+ }
+
  .large-hero--text-content-search {
    position: absolute;
    top: 50%;
@@ -213,7 +217,6 @@
  .btn_custom-drop-task {
    background-color: rgba(47, 85, 114, 0.3);
    color: #FFF;
-   border-radius: 25px;
    text-decoration: none;
    padding: .6rem 1.2rem;
    display: inline-block;

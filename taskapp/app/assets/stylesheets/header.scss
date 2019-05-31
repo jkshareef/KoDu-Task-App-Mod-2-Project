@@ -47,7 +47,7 @@
 
 }
 
-li.dropdown {
+li.drop-down {
   display: inline-block;
 }
 
@@ -60,11 +60,11 @@ li.dropdown {
   z-index: 1;
 }
 
-li a:hover, .dropdown:hover .dropbtn {
+li a:hover, .drop-down:hover .dropbtn {
   background-color: rgba(47, 85, 114, 0.3);
 }
 
-.dropdown:hover .dropdown-content {
+.drop-down:hover .dropdown-content {
   display: block;
 }
 
