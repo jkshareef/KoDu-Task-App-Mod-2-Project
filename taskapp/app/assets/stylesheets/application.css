@@ -22,6 +22,14 @@
    margin-right: auto;
  }
 
+ .wrapper__small {
+   padding-left: 18px;
+   padding-right: 18px;
+   max-width: 600px;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
  .wrapper__body {
    padding-top: 80px;
  }
@@ -161,7 +169,7 @@
     margin: 0 auto -80px auto;
     position: relative;
     top: -80px;
-    border: 6px solid rgba(255, 255, 255, 0.8);
+    border: 6px solid rgba(47, 85, 114, 0.8);
   }
 
   .search__result {
@@ -189,7 +197,18 @@
  .btn_custom-drop {
    background-color: #2F5572;
    color: #FFF;
+   text-decoration: none;
    padding: .6rem 1.2rem;
+   display: inline-block;
+ }
+
+ .btn_custom-drop-task {
+   background-color: rgba(47, 85, 114, 0.3);
+   color: #FFF;
+   border-radius: 25px;
+   text-decoration: none;
+   padding: .6rem 1.2rem;
+   display: inline-block;
  }
 
  .btn_custom--search-label {
