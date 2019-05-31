@@ -88,6 +88,11 @@
    left: 100px;
  }
 
+ .all-task-logo-guest {
+   position: relative;
+   text-align: center;
+ }
+
 
  .top-task-logo {
    position: relative;
