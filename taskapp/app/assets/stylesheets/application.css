@@ -47,16 +47,29 @@
  .large-hero--text-content {
    position: absolute;
    top: 50%;
-   transform: translateY(-150%);
+   transform: translateY(-70%);
    left: 0;
    width: 100%;
    text-align: center;
+   font-size: 100px;
+   font-family: 'Lobster', cursive;
+ }
+
+ #landing_logo {
+   position: absolute;
+   top: 35%;
+   transform: translateY(-70%);
+   left: 50%;
+   width: 100%;
+   font-weight: 500;
+   font-family: 'Lobster', cursive;
+
  }
 
  .large-hero--text-content-search {
    position: absolute;
    top: 50%;
-   transform: translateY(-150%);
+   transform: translateY(-50%);
    left: 50px;
    width: 100%;
    text-align: center;
@@ -200,6 +213,7 @@
    max-width: 100%;
    height: auto;
  }
+
 
 
 
